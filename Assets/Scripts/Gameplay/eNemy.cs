@@ -27,7 +27,7 @@ public class eNemy : MonoBehaviour
         {
             if (Time.time < hitCd) return;
             hitCd = Time.time + 0.4f;
-            var g = FindObjectOfType<gm>();
+            var g = FindObjectOfType<GameManager>();
             if (g != null) g.hitPlayer(7);
         }
 
@@ -53,7 +53,7 @@ public class eNemy : MonoBehaviour
         {
             if (Time.time < hitCd) return;
             hitCd = Time.time + 0.55f;
-            var g = FindObjectOfType<gm>();
+            var g = FindObjectOfType<GameManager>();
             if (g != null) g.hitPlayer(3);
         }
     }

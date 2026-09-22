@@ -22,4 +22,3 @@ Projekt **Play-uje**, ale nie je hotový. Overuješ skilly DEV2-01 … DEV2-05.
 | rozšírenie | DEV2-05 | Enemy zomrie, ale **skóre nerastie** — napoj `gm.addScore` / `ScoreText` |
 | 3/4.r extra | DEV2-06 | God-object `gm.cs` (`Find` v `Update`) — malý refaktor, nie celý rewrite |
 | 3/4.r extra | DEV2-06 | Zlepsi architekturu projektu |
-

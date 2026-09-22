@@ -23,14 +23,4 @@ public class HudStuff : MonoBehaviour
             txt2.text = "" + n;
         }
     }
-
-    void Update()
-    {
-        // TODO hook this to gm
-        if (txt == null)
-        {
-            var go = GameObject.Find("HPText");
-            if (go != null) txt = go.GetComponent<Text>();
-        }
-    }
 }

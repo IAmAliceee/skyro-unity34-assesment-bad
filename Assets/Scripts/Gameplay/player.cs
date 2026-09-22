@@ -50,7 +50,7 @@ public class player : MonoBehaviour
             hud.upd("hp " + hp);
         }
 
-        var g = FindObjectOfType<gm>();
+        var g = FindObjectOfType<GameManager>();
         if (g != null)
         {
             g.HP = hp;
@@ -89,7 +89,7 @@ public class player : MonoBehaviour
         if (c.gameObject.GetComponent<eNemy>() != null || c.gameObject.GetComponent<eNemy2>() != null)
         {
             hp = hp - 4;
-            var g = GameObject.FindObjectOfType<gm>();
+            var g = GameObject.FindObjectOfType<GameManager>();
             if (g != null) g.hitPlayer(0);
             var hpGo = GameObject.Find("HPText");
             if (hpGo != null) hpGo.GetComponent<Text>().text = "hp " + hp;
