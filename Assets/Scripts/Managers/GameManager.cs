@@ -10,7 +10,7 @@ namespace Managers {
         [Header("References")]
         [field: SerializeField] public EventManager Events { get; private set; }
         [field: SerializeField] public InputManager Inputs { get; private set; }
-        [field: SerializeField] public GameObject Player { get; private set; }
+        [field: SerializeField] public Player PlayerRef { get; private set; }
         [field: SerializeField] public bool GamePaused { get; private set; }
         [field: SerializeField] public bool GameOver { get; private set; }
         [field: SerializeField] public EVar<int> score = new(0);
@@ -39,6 +39,8 @@ namespace Managers {
             Events.OnGameResumed.RemoveAllListeners();
             Events.OnGameOver.RemoveAllListeners();
             Events.OnHealthChanged.RemoveAllListeners();
+            if (Instance == this)
+                Instance = null;
         }
 
         private void CheckIfDead(int newHealth)

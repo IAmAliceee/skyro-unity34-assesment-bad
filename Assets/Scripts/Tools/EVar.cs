@@ -7,7 +7,7 @@ namespace Tools
     [System.Serializable]
     public class EVar<T>
     {
-        private T _value;
+        [SerializeField] private T _value;
 
         [field: SerializeField] public UnityEvent<T> OnChanged { get; private set; } = new();
 

@@ -56,8 +56,8 @@ namespace Gameplay
 
         private void Spawn()
         {
-            Vector2 spawnPos = GameManager.Instance.Player.transform.position;
-            while(Vector2.Distance(GameManager.Instance.Player.transform.position, spawnPos) < minimalDistanceFromPlayer)
+            Vector2 spawnPos = GameManager.Instance.PlayerRef.transform.position;
+            while(Vector2.Distance(GameManager.Instance.PlayerRef.transform.position, spawnPos) < minimalDistanceFromPlayer)
             {
                 spawnPos = new(
                     Random.Range(spawnStartPosition.x, spawnEndPosition.x),

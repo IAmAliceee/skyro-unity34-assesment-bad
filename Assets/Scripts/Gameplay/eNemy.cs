@@ -4,7 +4,7 @@ public class eNemy : MonoBehaviour
 {
     public float speed = 2.4f;
     public int hp = 3;
-    float hitCd;
+    float hitCooldown;
 
     void Update()
     {
@@ -25,8 +25,8 @@ public class eNemy : MonoBehaviour
 
         if (other.gameObject.name == "player" || other.GetComponent<player>() != null)
         {
-            if (Time.time < hitCd) return;
-            hitCd = Time.time + 0.4f;
+            if (Time.time < hitCooldown) return;
+            hitCooldown = Time.time + 0.4f;
             var g = FindObjectOfType<GameManager>();
             if (g != null) g.hitPlayer(7);
         }
@@ -47,12 +47,12 @@ public class eNemy : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnCollisionStay2D(Collider2D other)
     {
         if (other != null && other.GetComponent<player>() != null)
         {
-            if (Time.time < hitCd) return;
-            hitCd = Time.time + 0.55f;
+            if (Time.time < hitCooldown) return;
+            hitCooldown = Time.time + 0.55f;
             var g = FindObjectOfType<GameManager>();
             if (g != null) g.hitPlayer(3);
         }
